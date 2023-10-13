@@ -107,10 +107,10 @@ span:nth-child(4) {
     filter: blur(150px)
 }
 
-.inner-circle1 {
-    height: 2000px;
-    width: 1480px;
+.inner-circle1 { 
     position: absolute;
+    height: 2000px;
+    width: 98%;
     background: black;
     top: 10px;
     left: 10px;
