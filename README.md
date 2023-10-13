@@ -1,7 +1,6 @@
-<!DOCTYPE html>
+
 <html>
 <head>
-    <title>ok</title>
     <link rel="stylesheet" type="text/css" href="colorful.css">
 </head>
 <body>
