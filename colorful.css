@@ -69,13 +69,13 @@ body{
     display: flex;
     align-items:normal;
     justify-content:column;
-    overflow: hidden;
+    overflow: auto;
     background-color: black;
 }
 
 .outer-circle1 {
     position: relative;
-    height: 100%; /* Adjusted height to fill the viewport */
+    height: 2020px; /* Adjusted height to fill the viewport */
     width: 100%; /* Fills the entire viewport width */
     background: linear-gradient(#9d95f5, #8aeab2, #fdb5b5);
     animation: rotate 1.5s linear infinite;
@@ -83,7 +83,7 @@ body{
 
 .outer-circle1 span {
     position: absolute;
-    height: 100%;
+    height: 2020px;
     width: 100%;
     background: linear-gradient(#9d95f5, #8aeab2, #fdb5b5);
     border: 0;
@@ -110,11 +110,11 @@ span:nth-child(4) {
 .inner-circle1 { 
     position: absolute;
     height: 98%;
-    width: 1500px;
+    width: 98%;
     background: black;
-    top: 0;
-    left: 0;
-    border: 0;
+    top: 10px;
+    left: 10px;
+    border: 50%;
     z-index: 9;
 }
 
@@ -135,7 +135,7 @@ body{
     display: flex;
     align-items: center;
     justify-content:column;
-    overflow: hidden;
+    overflow: auto;
     background-color: black;
 }
 
