@@ -8,31 +8,7 @@
         <div class="inner-circle1">
             <H1 style="color: white; text-align: center;">Hello</H1>
             <H1 style="text-align: center;">
-                <span style="color: cyan">H</span>
-                <span style="color: pink">e</span>
-                <span style="color: green">l</span>
-                <span style="color: orange">l</span>
-                <span style="color: yellow">o</span>
-                <span style="color: lime">W</span>
-                <span style="color: cyan">e</span>
-                <span style="color: green">l</span>
-                <span style="color: pink">c</span>
-                <span style="color: orange">o</span>
-                <span style="color: yellow">m</span>
-                <span style="color: green">e</span>
-                <span style="color: cyan">T</span>
-                <span style="color: green">o</span>
-                <span style="color: pink">M</span>
-                <span style="color: orange">y</span>
-                <span style="color: yellow">W</span>
-                <span style="color: lime">e</span>
-                <span style="color: cyan">b</span>
-                <span style="color: green">s</span>
-                <span style="color: pink">i</span>
-                <span style="color: orange">t</span>
-                <span style="color: yellow">e</span>
-                <span style="color: pink">:</span>
-                <span style="color: green">)</span>
+                 <H1 align="center"><font color=cyan>H</font><font color=pink>e</font><font color=#9e96ff>l</font><font color=orange>l</font><font color=yellow>o</font> <font color=lime>W</font><font color=cyan>e</font><font color=#9d95f5>l</font><font color=pink>c</font><font color=orange>o</font><font color=yellow>m</font><font color=green>e</font> <font color=cyan>T</font><font color=#9d95f5>o</font> <font color=pink>M</font><font color=orange>y</font> <font color=yellow>W</font><font color=lime>e</font><font color=cyan>b</font><font color=#9d95f5>s</font><font color=pink>i</font><font color=orange>t</font><font color=yellow>e</font> <font color=green>:</font><font color=pink>)</font></H1>
             </H1>
             <div class="outer-circle2"></div>
             <img src="getogif.gif" type="image/gif" style="width: 40%; display: block; margin: 0 auto;">
