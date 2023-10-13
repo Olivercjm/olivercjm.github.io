@@ -75,7 +75,7 @@ body{
 
 .outer-circle1 {
     position: relative;
-    height: 2020px; /* Adjusted height to fill the viewport */
+    height: 100%; /* Adjusted height to fill the viewport */
     width: 100%; /* Fills the entire viewport width */
     background: linear-gradient(#9d95f5, #8aeab2, #fdb5b5);
     animation: rotate 1.5s linear infinite;
@@ -83,7 +83,7 @@ body{
 
 .outer-circle1 span {
     position: absolute;
-    height: 2020px;
+    height: 100%;
     width: 100%;
     background: linear-gradient(#9d95f5, #8aeab2, #fdb5b5);
     border: 0;
@@ -109,11 +109,11 @@ span:nth-child(4) {
 
 .inner-circle1 { 
     position: absolute;
-    height: 2000px;
+    height: 98%;
     width: 98%;
     background: black;
-    top: 10px;
-    left: 10px;
+    top: 5%;
+    left: 1%;
     border: 50%;
     z-index: 9;
 }
