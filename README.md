@@ -11,24 +11,6 @@
             <center><div class="outer-circle2"></div></center>
             <center><img src="getogif.gif" type="image/gif" style="width: 30%; display: block; margin: 0 auto;"></center>
             <br><br>
-            <style>
-                table {
-                        margin: 0 auto;
-                        width:50%;
-                        background: rgb(0, 0, 0);
-                        border-collapse: separate;
-                        border-spacing: 10px;
-                        display: inline-table; /* Add this line to center the table */
-                    }
-                table td {
-                    font-size: 100%;
-                    padding: 10px;
-                    text-align: center; /* Center the text within the cells */
-                }
-                table tr{
-                    background-color: linear-gradient(#0800ff, #ff0000, #000000);
-                }
-            </style>
             <center>
             <table><font size="10">
                 <tr>
