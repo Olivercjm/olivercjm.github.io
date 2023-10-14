@@ -14,13 +14,14 @@
             <style>
                 table {
                         margin: 0 auto;
+                        width:50%;
                         background: rgb(0, 0, 0);
                         border-collapse: separate;
                         border-spacing: 10px;
                         display: inline-table; /* Add this line to center the table */
                     }
                 table td {
-                    font-size: 50px;
+                    font-size: 100%;
                     padding: 10px;
                     text-align: center; /* Center the text within the cells */
                 }
