@@ -90,7 +90,7 @@ body {
     background: linear-gradient(#9d95f5, #8aeab2, #fdb5b5);
     border: 0;
     top: 0;
-    left: 0;
+    left: 10px;
 }
 span:nth-child(1) {
     filter: blur(5px)
@@ -113,8 +113,9 @@ span:nth-child(4) {
     height: 98vh;
     width: 98vh;
     background: black;
-    top: 10px; /* Vertically center it */
-    left: 5px; /* Horizontally center it */
+    top: 50%; /* Vertically center it */
+    left: 50%; /* Horizontally center it */
+    transform: translate(-50%, -50%); /* Centering trick */
     border: 50%;
     z-index: 9;
 }
