@@ -113,9 +113,8 @@ span:nth-child(4) {
     height: 98vh;
     width: 98vh;
     background: black;
-    top: 50%; /* Vertically center it */
-    left: 50%; /* Horizontally center it */
-    transform: translate(-50%, -50%); /* Centering trick */
+    top: 10px; /* Vertically center it */
+    left: 5px; /* Horizontally center it */
     border: 50%;
     z-index: 9;
 }
