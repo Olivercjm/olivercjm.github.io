@@ -1,19 +1,22 @@
 table {
     margin: 0 auto;
-    width:50%;
-    background: rgb(0, 0, 0);
+    width: 50%;
+    background: linear-gradient(#0800ff, #ff0000, #000000);
     border-collapse: separate;
     border-spacing: 10px;
-    display: inline-table; /* Add this line to center the table */
-    }
+    display: inline-table;
+}
+
 table td {
     font-size: 100%;
     padding: 10px;
-    text-align: center; /* Center the text within the cells */
-    }
-table tr{
+    text-align: center;
+}
+
+table tr {
     background-color: linear-gradient(#0800ff, #ff0000, #000000);
-    }
+}
+
 
 body{
     min-height: 100vh;
