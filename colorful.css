@@ -99,6 +99,7 @@ body {
     background: linear-gradient(#9d95f5, #8aeab2, #fdb5b5);
     animation: rotate 1.5s linear infinite;
     overflow: hidden; /* Hide overflow outside the viewport */
+    left: 30%;
 }
 
 .outer-circle1 span {
