@@ -1,7 +1,7 @@
 table {
     margin: 0 auto;
     width: 50%;
-    background: linear-gradient(#0800ff, #ff0000, #000000);
+    background: black;
     border-collapse: separate;
     border-spacing: 10px;
     display: inline-table;
