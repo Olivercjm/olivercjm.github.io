@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book List</title>
+</head>
+<body>
+    <h1>Book List</h1>
+    <ul id="bookList"></ul>
+    <script>
+        // JavaScript code to load and display XML data
+        fetch('books.xml') // Replace 'books.xml' with the actual path to your XML file.
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(data, 'text/xml');
+                const books = xmlDoc.getElementsByTagName('book');
+                const ul = document.getElementById('bookList');
+                for (let i = 0; i < books.length; i++) {
+                    const book = books[i];
+                    const title = book.getElementsByTagName('title')[0].textContent;
+                    const author = book.getElementsByTagName('author')[0].textContent;
+                    const year = book.getElementsByTagName('year')[0].textContent;
+                    const li = document.createElement('li');
+                    li.textContent = `${title} by ${author} (${year})`;
+                    ul.appendChild(li);
+                }
+            })
+            .catch(error => console.error(error));
+    </script>
+</body>
+</html>
