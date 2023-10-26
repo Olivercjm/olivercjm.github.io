@@ -1,14 +1,13 @@
 
-<library>
-    <book>
-        <title>Sample Book 1</title>
-        <author>John Doe</author>
-        <year>2020</year>
-    </book>
-    <book>
-        <title>Sample Book 2</title>
-        <author>Jane Smith</author>
-        <year>2018</year>
-    </book>
-    <!-- You can add more book entries here -->
-</library>
+<list>
+    <person>
+        <name>Anya Forger</name>
+        <age>10</age>
+        <hp>2020</hp>
+    </person>
+    <person>
+        <name>Yuji Idatori</name>
+        <age>25</age>
+        <hp>2018</hp>
+    </person>
+</list>
