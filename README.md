@@ -14,6 +14,9 @@
             <center>
             <table><font size="10">
                 <tr>
+                <td colspan="6"><a href="https://olivercjm.github.io/htmlxmltest.html" target="_blank">Assignment</a></td>
+                </tr>
+                <tr>
                     <td><a href="https://olivercjm.github.io/lesson_activity/tutorial1.png" target="_blank">Tutorial 1</a></td>
                     <td><a href="https://olivercjm.github.io/lesson_activity/tutorial2.png" target="_blank">Tutorial 2</a></td>
                     <td><a href="https://olivercjm.github.io/lesson_activity/tutorial3.png" target="_blank">Tutorial 3</a></td>
