@@ -1,28 +1,26 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>Book List</title>
+    <title>Person List</title>
 </head>
 <body>
-    <h1>Book List</h1>
-    <ul id="bookList"></ul>
+    <h1>Person List</h1>
+    <ol id="personList"></ol>
     <script>
-        // JavaScript code to load and display XML data
-        fetch('books.xml') // Replace 'books.xml' with the actual path to your XML file.
+        fetch('person.xml') 
             .then(response => response.text())
             .then(data => {
                 const parser = new DOMParser();
                 const xmlDoc = parser.parseFromString(data, 'text/xml');
-                const books = xmlDoc.getElementsByTagName('book');
-                const ul = document.getElementById('bookList');
-                for (let i = 0; i < books.length; i++) {
-                    const book = books[i];
-                    const title = book.getElementsByTagName('title')[0].textContent;
-                    const author = book.getElementsByTagName('author')[0].textContent;
-                    const year = book.getElementsByTagName('year')[0].textContent;
+                const persons = xmlDoc.getElementsByTagName('person');
+                const ol = document.getElementById('personList');
+                for (let i = 0; i < persons.length; i++) {
+                    const person = persons[i];
+                    const name = person.getElementsByTagName('name')[0].textContent;
+                    const age = person.getElementsByTagName('age')[0].textContent;
+                    const hp = person.getElementsByTagName('hp')[0].textContent;
                     const li = document.createElement('li');
-                    li.textContent = `${title} by ${author} (${year})`;
-                    ul.appendChild(li);
+                    li.textContent = `${name}  ${age} years old  HP : ${hp}`;
+                    ol.appendChild(li);
                 }
             })
             .catch(error => console.error(error));
