@@ -2,7 +2,7 @@
 <head>
     <title>Person List</title>
 </head>
-<body>
+<body bgcolor = black text = white>
     <h1>Person List</h1>
     <ol id="personList"></ol>
     <script>
@@ -19,7 +19,7 @@
                     const age = person.getElementsByTagName('age')[0].textContent;
                     const hp = person.getElementsByTagName('hp')[0].textContent;
                     const li = document.createElement('li');
-                    li.textContent = `${name}  ${age} years old  HP : ${hp}`;
+                    li.textContent = `${name}     ${age} years old     HP : ${hp}`;
                     ol.appendChild(li);
                 }
             })
