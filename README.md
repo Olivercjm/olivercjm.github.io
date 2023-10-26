@@ -14,7 +14,7 @@
             <center>
             <table><font size="10">
                 <tr>
-                <td colspan="6"><a href="https://olivercjm.github.io/htmlxmltest.html" target="_blank">Assignment</a></td>
+                <td colspan="6" style="background-color: aquamarine; color: white;"><a href="https://olivercjm.github.io/person.html" target="_blank"><font color="black"> Assignment</font></a></td>
                 </tr>
                 <tr>
                     <td><a href="https://olivercjm.github.io/lesson_activity/tutorial1.png" target="_blank">Tutorial 1</a></td>
