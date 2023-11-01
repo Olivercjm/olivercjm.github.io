@@ -32,6 +32,9 @@
                     <td><a href="https://olivercjm.github.io/lesson_activity/tutorial11.html" target="_blank">Tutorial 11</a></td>
                     <td><a href="https://olivercjm.github.io/lesson_activity/tutorial12.html" target="_blank">Tutorial 12</a></td>
                 </tr>
+                <tr>
+                    <td><a href="https://olivercjm.github.io/lesson_activity/tutorial13.html" target="_blank">Tutorial 13</a></td>
+                </tr>
                 </font>
             </table>
         </center>
