@@ -81,10 +81,16 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input type="submit"value=Submit> <input type="reset" value="Reset"></td></tr>
+                        <td><input type="button"value=Submit onmouseup="project()"> <input type="reset" value="Reset"></td></tr>
                 </p>
             </form>
         </table>
+        <script>
+            function project() {
+                // Redirect to another HTML file
+                window.location.href='projecttest.html';
+            }
+        </script>
     </body>
 
 </html>
