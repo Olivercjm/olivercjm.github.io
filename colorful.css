@@ -94,7 +94,7 @@ body {
 
 .outer-circle1 {
     position: relative;
-    height: 125vh; /* Adjusted height to fill the viewport */
+    height: 130vh; /* Adjusted height to fill the viewport */
     width: 100vh; /* Fills the entire viewport width */
     background: linear-gradient(#9d95f5, #8aeab2, #fdb5b5);
     animation: rotate 1.5s linear infinite;
