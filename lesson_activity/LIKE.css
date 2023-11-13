@@ -1,0 +1,147 @@
+body{
+    background-color: white;
+}
+
+.container {
+    width: 100%;
+  }
+
+table{
+    width: 100%;
+}
+
+.head{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1{
+    margin-left: 5%;
+    font-size: medium;
+    justify-content: center;
+    display: flex;
+}
+
+h1.hero{
+    font-size:50px;
+    font-weight: bolder;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: -10%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+table tr td img{
+    margin-left: 2%;
+    height: 30%;
+}
+table tr td img.hero{
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.c{
+    width: 100%;
+    text-align: left;
+    justify-content: left;
+}
+.c td{
+    width: 20%;
+}
+
+img.c{
+    width: 100%;
+    height: 100%;
+}
+
+h1.c{
+    font-weight: bold;
+    justify-content: left;
+    font-size: 20px;
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p.c{
+    justify-content: left;
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 5%;
+}
+
+p.r{
+    font-weight: bold;
+    justify-content: left;
+    display: flex;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 5%;
+}
+
+table tr td img.logo{
+    margin-left: 25%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.container h1{
+    font-size: 60px;
+    font-weight: bolder;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: oblique;
+}
+
+button.btt{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: flex;
+}
+
+h1.search{
+    margin-top: 0.5%;
+    margin-left: 15%;
+    font-size: medium;
+    display: flex;
+}
+
+h1.fav{
+    margin-top: 0.5%;
+    margin-left: 5%;
+    font-size: medium;
+    display: flex;
+}
+
+h1.men{
+    margin-top: 50;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: 50px;
+    display: flex;
+    justify-content: left;
+}
+
+h1.cart{
+    margin-top: 0.5%;
+    margin-left: 5%;
+    font-size: medium;
+    display: flex;
+}
+
+.n{
+    margin-left: 32%;
+    align-items: center;
+    display: flex;
+}
+.category-row h1 {
+    margin-left: 3%;
+}
