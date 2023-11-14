@@ -11,13 +11,14 @@ table{
 }
 
 .fix{
-    position: fixed;
+    position: absolute;
     z-index: 1;
 }
 
 
 .head{
     position: relative;
+    font-family: Arial, Helvetica, sans-serif;
     top: 0;
     left: 0;
     width: 100%;
@@ -41,6 +42,8 @@ h1.contact:hover{
     background-color: black;
     color: white;
     border-radius: 20%;
+    height: max-content;
+    width: max-content;
 }
 
 .choose {
@@ -298,6 +301,7 @@ h1.men{
 .n{
     margin-top:10%;
     margin-left: 32%;
+    font-family: Arial, Helvetica, sans-serif;
     align-items: center;
     display: flex;
 }
