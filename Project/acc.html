@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Account</title>
+        <style>
+            body{
+                background-image: url(likebg.png);
+            }
+
+            table{
+                background-color: white;
+                border: double 3px;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                margin-top: 10%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript" src="LIKE.js"></script>
+        <table width="50%" align="center">
+            <tr><th colspan="4"><img src="like.png" align="center" width="30%"></th></tr>
+            <form>
+                <tr>
+                    <th colspan="4"><h1>Sign In</h1></th> 
+                    </tr>
+                    <tr>
+                        <td>First Name:</td> <td ><input type="text" name="fname"></td>
+                    </tr>
+                    <tr>
+                        <td>Last Name:</td><td > <input type = text name = lname></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Date of Birth:</td>
+                        <td><input type="date" name="dob"></td>
+                    </tr>
+                    <tr>
+                        <td>Gender:</td>
+                        <td><input type="radio" name="gender" value="Male">Male
+                        <input type="radio" name="gender" value="Female">Female</td>
+                    </tr>
+                    <tr>
+                            <td></td>
+                            <td><input class="s" type="button"value=Submit onmouseup="goback()"> <input class="r" type="reset" value="Reset"></td>
+                        </tr>
+            </form>
+        </table>
+    </body>
+</html>
