@@ -1,6 +1,5 @@
 body{
     background-color: white;
-    width: 100vw;
 }
 
 .container {
@@ -8,13 +7,13 @@ body{
   }
 
 table{
-    width: 100vw;
+    width: 100%;
 }
 
 table.bottom{
     background-color: black;
     color: gray;
-    width: 100%;
+    width: 110%;
     height: 20%;
     text-align: center;
 }
@@ -63,11 +62,6 @@ img.acc:hover{
     border-radius: 20%;
 }
 
-h1.contact {
-    font-size: 1vw
-}
-
-
 h1.contact:hover{
     background-color: black;
     color: white;
@@ -82,7 +76,6 @@ h1.contact:hover{
 .choose {
     position: relative;
     display: inline-block;
-    font-size: 1vw;
 }
 
 .choose:after {
@@ -105,7 +98,6 @@ h1.contact:hover{
 .choose1 {
     position: relative;
     display: inline-block;
-    font-size: 1vw;
 }
 
 .choose1:after {
@@ -146,7 +138,6 @@ button.contact:hover{
 .choose2 {
     position: relative;
     display: inline-block;
-    font-size: 1vw;
 }
 
 .choose2:after {
@@ -169,7 +160,6 @@ button.contact:hover{
 .choose3 {
     position: relative;
     display: inline-block;
-    font-size: 1vw;
 }
 
 .choose3:after {
@@ -192,7 +182,6 @@ button.contact:hover{
 .choose4 {
     position: relative;
     display: inline-block;
-    font-size: 1vw;
 }
 
 .choose4:after {
@@ -356,11 +345,9 @@ h1.men{
 
 .n{
     margin-top:10%;
+    margin-left: 32%;
     font-family: Arial, Helvetica, sans-serif;
     align-items: center;
-    width: 100vw;
-    text-align: center;
-    justify-content: center;
     display: flex;
 }
 .category-row h1 {
