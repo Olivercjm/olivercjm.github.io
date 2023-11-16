@@ -171,11 +171,13 @@ function news() {
             }
             
             function atc() {
+                const itemAj1 = document.querySelector('img.aj1').src;
                 const itemName = document.querySelector('h1.aj').innerText;
                 const itemGender = document.querySelector('h1.gender').innerText;
                 const itemPrice = document.querySelector('h1.price').innerText;
-
+            
                 const newItem = {
+                    aj1: itemAj1,
                     name: itemName,
                     gender: itemGender,
                     price: itemPrice,
@@ -185,16 +187,14 @@ function news() {
             
                 const existingItem = addtocart.find(item => item.name === itemName);
                 if (!existingItem) {
-
                     addtocart.push(newItem);
-
                     localStorage.setItem('addtocart', JSON.stringify(addtocart));
-
-                    alert(`"${itemName}"added to cart successfully.`);
+                    alert(`"${itemName}" added to cart successfully.`);
                 } else {
-                    alert(`"${itemName}" is already available in cart.`);
+                    alert(`"${itemName}" is already available in the cart.`);
                 }
             }
+            
             
 
             function gmail()
@@ -273,16 +273,15 @@ function news() {
                 
                 function carth() {
                     const addtocart = JSON.parse(localStorage.getItem('addtocart')) || [];
-                    let tableContent = '<table border="1">';
-                    tableContent += '<tr><th>Name</th><th>Gender</th><th>Price</th><th>Action</th></tr>';
-                
+                    let tableContent = '<table border= 1>';
                     addtocart.forEach((item, index) => {
                         tableContent += `
                             <tr>
-                                <td>${item.name}</td>
-                                <td>${item.gender}</td>
-                                <td>${item.price}</td>
-                                <td onclick="deleteItem(${index})" class="r">Remove</td>
+                                <td width=20%><img src="${item.aj1}" style="width: 100%; height: auto;"></td>
+                                <td><h1>${item.name}</h1></td>
+                                <td><h1>${item.gender}</h1></td>
+                                <td class=price><h1>${item.price}</h1></td>
+                                <td><h1 onclick="deleteItem(${index})" class="r">Remove</h1></td>
                             </tr>`;
                     });
                 
@@ -302,30 +301,52 @@ function news() {
                                 padding: 10px;
                             }
                             table {
-                                border: double 3px;
+                                border: solid 3px;
                                 background-color: white;
                                 width: 100%;
+                                border-radius: 2%;
                             }
                             th, td {
-                                text-align: left;
+                                text-align: center;
                             }
-                            td.r{
+                            h1{
+                                font-size: medium;
+                                font-weight: bold;
+                            }
+                            h1.cart{
                                 background-color: white;
+                                font-size: 100px;
+                                text-align: center;
                             }
-                            td.r:hover{
+                            h1.r{
+                                border: solid 2px;
+                                background-color: white;
+                                border-radius: 10%;
+                                font-size: medium;
+                                font-weight: bold;
+                            }
+                            h1.r:hover{
                                 background-color: red;
+                                border-radius: 20%;
+                            }
+
+                            td.price{
+                                background-color: lime;
                             }
                         </style>
-                        <h1 class="fav">Cart</h1>
+                        <h1 class=cart>Cart</h1>
                         ${tableContent}
                         <script>
                             function deleteItem(index) {
                                 let addtocart = JSON.parse(localStorage.getItem('addtocart')) || [];
                                 addtocart.splice(index, 1);
                                 localStorage.setItem('addtocart', JSON.stringify(addtocart));
+                            
                                 const table = window.document.querySelector('table');
-                                table.deleteRow(index + 1);
+                                table.deleteRow(index);
                             }
+                            
                         </script>
                     `);
                 }
+                
