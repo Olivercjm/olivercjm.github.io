@@ -1,6 +1,6 @@
 body{
     background-color: white;
-    width: 100%;
+    width: 100vw;
 }
 
 .container {
@@ -351,9 +351,11 @@ h1.men{
 
 .n{
     margin-top:10%;
-    margin-left: 32%;
     font-family: Arial, Helvetica, sans-serif;
     align-items: center;
+    width: 100vw;
+    text-align: center;
+    justify-content: center;
     display: flex;
 }
 .category-row h1 {
