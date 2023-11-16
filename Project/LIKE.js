@@ -273,18 +273,28 @@ function news() {
                 
                 function carth() {
                     const addtocart = JSON.parse(localStorage.getItem('addtocart')) || [];
+                    let total = 0; // Variable to hold the total price
                     let tableContent = '<table border= 1>';
                     addtocart.forEach((item, index) => {
+                        // Increment the total with the price of each item
+                        total += parseFloat(item.price.replace('RM ', ''));
                         tableContent += `
                             <tr>
                                 <td width=20%><img src="${item.aj1}" style="width: 100%; height: auto;"></td>
                                 <td><h1>${item.name}</h1></td>
                                 <td><h1>${item.gender}</h1></td>
                                 <td class=price><h1>${item.price}</h1></td>
-                                <td><h1 onclick="deleteItem(${index})" class="r">Remove</h1></td>
+                                <td><h1 onclick="deleteItem('${item.name}')" class="r">Remove</h1></td>
                             </tr>`;
                     });
                 
+                    tableContent += `
+                        <tr>
+                            <td colspan="3" class=total><h1>Total Price:</h1></td>
+                            <td class=price><h1>RM ${total.toFixed(2)}</h1></td>
+                            <td class=pay>System Down, Payment is unavailable</td>
+                        </tr>`;
+                    
                     tableContent += '</table>';
                 
                     const atc = window.open('');
@@ -333,20 +343,29 @@ function news() {
                             td.price{
                                 background-color: lime;
                             }
-                        </style>
-                        <h1 class=cart>Cart</h1>
-                        ${tableContent}
-                        <script>
-                            function deleteItem(index) {
-                                let addtocart = JSON.parse(localStorage.getItem('addtocart')) || [];
-                                addtocart.splice(index, 1);
-                                localStorage.setItem('addtocart', JSON.stringify(addtocart));
-                            
-                                const table = window.document.querySelector('table');
-                                table.deleteRow(index);
+
+                            td.total{
+                                text-align: right;
                             }
-                            
-                        </script>
-                    `);
-                }
-                
+
+                            td.pay{
+                                background-color: gray;
+                            }
+                            </style>
+                            <h1 class=cart>Cart</h1>
+                            ${tableContent}
+                            <script>
+                                function deleteItem(name) {
+                                    let addtocart = JSON.parse(localStorage.getItem('addtocart')) || [];
+                                    const index = addtocart.findIndex(item => item.name == name);
+                                    if (index !== -1) {
+                                        addtocart.splice(index, 1);
+                                        localStorage.setItem('addtocart', JSON.stringify(addtocart));
+                                        const table = window.document.querySelector('table');
+                                        table.deleteRow(index + 1);
+                                        window.location.reload();
+                                    }
+                                }
+                            </script>
+                        `);
+                    }
