@@ -24,9 +24,10 @@
                         alert("Please Enter Name");
                         break;
 
-                    case getname != letters:
-                        alert("Only alphabets is allowed in the input");
+                    case !letters.test(getname):
+                        alert("Only alphabets are allowed in the input");
                         break;
+
                     default:
                         alert("Wrong, my name is not " + getname + " try again.");
                         break;
