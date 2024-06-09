@@ -87,7 +87,6 @@ function draw() {
             collectibles[i].update();
             collectibles[i].show();
             if (collectibles[i].hits(player)) {
-                console.log(`Collectible hit! Score: ${score}`);
                 collectibles.splice(i, 1);
                 score += 100;
             }
@@ -179,6 +178,8 @@ function showLevelCompleteScreen() {
     text('Level Complete!', width / 2, height / 2);
     textSize(16);
     text('Press R or Click to Play Again', width / 2, height / 2 + 40);
+    translate(width/2-125, height/2+100);
+    player.show();
 }
 
 function startGame() {
