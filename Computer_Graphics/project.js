@@ -178,8 +178,7 @@ function showLevelCompleteScreen() {
     text('Level Complete!', width / 2, height / 2);
     textSize(16);
     text('Press R or Click to Play Again', width / 2, height / 2 + 40);
-    translate(width/2-125, height/2+100);
-    player.show();
+    image(gif,width/2 -100, height/2 -40 ,200,200);
 }
 
 function startGame() {
