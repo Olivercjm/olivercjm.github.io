@@ -477,8 +477,10 @@ class Particle {
         g = random(100, 255);
         b = random(100, 255);
         push();
-        fill(r, g, b, this.alpha);
-        rect(this.x, this.y, 5, 40);
+        fill(0,0,255, this.alpha);
+        rect(this.x-50, this.y, 5, 40);
+        fill(255,0,0, this.alpha);
+        rect(this.x-30, this.y, 5, 40);
         pop();
     }
 
