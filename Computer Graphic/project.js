@@ -10,8 +10,13 @@ let maxParticles = 30;
 let soundPlaying = false;
 let vol = 0.5;
 let die = 0;
-
+let pos = 0;
 let finishLineX = 500;
+let collectibleCount = 0;
+let maxCollectibles = 3;
+let lastCollectibleX = -1000; 
+let displayedScore = 0;
+
 
 function preload() {
     gif = loadImage("pic/pix.gif");
@@ -23,6 +28,8 @@ function preload() {
     grave = loadImage("pic/grave.gif");
     coffee = loadImage("pic/coffee.gif");
     coin = loadImage("pic/coin.gif");
+    star1 = loadImage("pic/star.gif");
+    star2 = loadImage("pic/starg.gif");
     sound = loadSound('sound/sad.mp3');
     sound2 = loadSound('sound/marioplant.mp3');
     sound3 = loadSound('sound/fm.mp3');
@@ -48,6 +55,8 @@ function draw() {
     } else if (gameState === 'levelSelect') {
         showLevelSelectScreen();
     } else if (gameState === 'playing') {
+        pos++;
+        console.log(pos);
         sound3.stop();
         soundPlaying = false;
         bg.update();
@@ -80,13 +89,16 @@ function draw() {
             obstacles[i].show();
             if (obstacles[i].hits(player)) {
                 gameOver();
+                if (gameState === 'playinge') {
+                    die += 1;
+                }
             }
             if (obstacles[i].x + obstacles[i].width < 0) {
                 obstacles.splice(i, 1);
             }
         }
 
-        if (frameCount % 100 === 0) {
+        if (frameCount % 100 === 0 && pos < 2000) {
             collectibles.push(new Collectible());
         }
 
@@ -102,19 +114,27 @@ function draw() {
             }
         }
 
+        if (pos >= 2000) {
+            levelComplete();
+        }
+
         if (score >= finishLineX) {
             levelComplete();
         }
 
-        // Display score
         fill(255);
         textSize(32);
         textAlign(RIGHT);
         text(`Score: ${score}`, width - 20, 30);
+        text(`Route: ${pos} m`, width - 20, 80);
         fill(255);
         stroke(0);
         strokeWeight(3);
-        text(`Target: Score ${finishLineX} to win`, width / 2 + 100, 30);
+        textSize(20);
+        fill(0);
+        stroke(255);
+        text(`Target: Score ${finishLineX} within 2000 m to win`, width / 2 + 100, 30);
+        stroke(0);
     }
     else if (gameState === 'playinge') {
         sound3.stop();
@@ -191,6 +211,7 @@ function draw() {
 }
 
 function levelComplete() {
+    pos = 0;
     gameState = 'levelComplete';
     sound2.stop();
     soundPlaying = false;
@@ -234,7 +255,7 @@ function showStartScreen() {
     endShape(CLOSE);
 
     fill(0);
-    text(' Jetpack \n', width / 2 - 100, height / 2 - 140);
+    text(' Stickjet \n', width / 2 - 90, height / 2 - 140);
     textColor = color(r,g,b);
     text('Challenge', width / 2 +320, height / 2 - 50);
     textSize(32);
@@ -264,14 +285,28 @@ function showLevelSelectScreen() {
 }
 
 function showGameOverScreen() {
+
+    pos = 0;
     fill(255);
     textSize(80);
     textAlign(CENTER);
     text('Game Over', width / 2, height / 2 - 50);
     image(grave, width/2-150, height/2, 300, 300);
     textSize(32);
-    text(`Score: ${score}`, width / 2, height / 2 +20);
+
+    // Gradually increase the displayed score
+    if (displayedScore < score) {
+        displayedScore ++;
+        if (displayedScore > score) {
+            displayedScore = score;
+        }
+        // Schedule the next update
+        requestAnimationFrame(showGameOverScreen);
+    }
+
+    text(`Score: ${displayedScore}`, width / 2, height / 2 + 20);
     text(`Press R or Click to Retry`, width / 2, height / 2 + 60);
+
     if (!soundPlaying) {
         sound.play();
         soundPlaying = true;
@@ -292,13 +327,41 @@ function showLevelCompleteScreen() {
     fill(255);
     textSize(64);
     textAlign(CENTER);
+    if (score <= finishLineX/3)
+        {
+            image(star1, width/2-180,height/2-200,100,100);
+            image(star2, width/2-60,height/2-250,150,150);
+            image(star2, width/2+110,height/2-200,100,100);
+        }
+    else if (score > finishLineX/3 && score <= finishLineX -100)
+        {
+            image(star1, width/2-180,height/2-200,100,100);
+            image(star1, width/2-60,height/2-250,150,150);
+            image(star2, width/2+110,height/2-200,100,100);
+        }
+    else if(score >= finishLineX)
+        {
+            image(star1, width/2-180,height/2-200,100,100);
+            image(star1, width/2-60,height/2-250,150,150);
+            image(star1, width/2+110,height/2-200,100,100);
+        }
     text('Level Complete!', width / 2, height / 2);
     textSize(32);
-    text('Press R or Click to Play Again', width / 2, height / 2 + 40);
+    if (displayedScore < score) {
+        displayedScore ++;
+        if (displayedScore > score) {
+            displayedScore = score;
+        }
+        requestAnimationFrame(showLevelCompleteScreen);
+    }
+
+    text(`Score: ${displayedScore}`, width / 2, height / 2 + 40);
+    text('Press R or Click to Play Again', width / 2, height / 2 + 80);
     image(gif, width / 2 - 100, height-200, 180, 200);
 }
 
 function startGame() {
+    displayedScore = 0;
     gameState = 'playing';
     soundPlaying = false;
     if (!soundPlaying) {
@@ -309,6 +372,7 @@ function startGame() {
 }
 
 function startGame2() {
+    displayedScore = 0;
     gameState = 'playinge';
     soundPlaying = false;
     if (!soundPlaying) {
@@ -429,6 +493,32 @@ function keyPressed() {
             pauseGame();
         }
     }
+    else if (key === 'm'|| key === 'M')
+        {
+            if (gameState === 'playing' || gameState === 'playinge')
+                {
+                        sound2.stop();
+                        soundPlaying = false;
+                }
+            if (gameState === 'levelComplete')
+                { 
+                    sound3.stop();
+                }
+        }
+    else if (key === 'o'|| key === 'O')
+        {
+            if (gameState === 'playing' || gameState === 'playinge')
+                {
+                    if(soundPlaying === false){
+                        sound2.play();
+                        soundPlaying = true;
+                    }
+                }
+            if (gameState === 'levelComplete')
+                { 
+                    sound3.play();
+                }
+        }
 }
 
 function keyReleased() {
@@ -535,7 +625,7 @@ class Collectible {
         stroke(0);
         strokeWeight(5);
         if (this.ran === 'ellipse') {
-            image(coin,this.x, this.y, this.size +100, this.size+50);
+            image(coin, this.x, this.y, this.size + 100, this.size + 50);
         } else {
             rect(this.x, this.y, this.size, this.size);
         }
@@ -545,6 +635,9 @@ class Collectible {
         return d < this.size / 2 + player.size / 2;
     }
 }
+
+
+
 
 class Background {
     constructor() {
@@ -572,8 +665,9 @@ class Background {
     }
     show() {
         fill(200);
-        image(mbg, this.x1-1, 0, width -200, height);
-        image(mbg, this.x2-1, 0, width, height);
-        image(mbg1, this.x3-2.3, 0, width-998, height);
+        image(mbg, this.x1 - 1, 0, width - 200, height);
+        image(mbg, this.x2 - 1, 0, width, height);
+        image(mbg1, this.x3 - 2.3, 0, width - 998, height);
     }
 }
+
