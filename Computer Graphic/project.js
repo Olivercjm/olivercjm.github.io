@@ -2,6 +2,7 @@ let player;
 let obstacles = [];
 let collectibles = [];
 let particles = [];
+
 let bg, r, g, b;
 let gameState = 'start';
 let spacePressed = false;
@@ -16,6 +17,8 @@ let collectibleCount = 0;
 let maxCollectibles = 3;
 let lastCollectibleX = -1000; 
 let displayedScore = 0;
+let speed = 1600;
+let marker;
 
 
 function preload() {
@@ -30,6 +33,8 @@ function preload() {
     coin = loadImage("pic/coin.gif");
     star1 = loadImage("pic/star.gif");
     star2 = loadImage("pic/starg.gif");
+    fl = loadImage("pic/fl.png");
+    huh = loadImage("pic/huh.gif");
     sound = loadSound('sound/sad.mp3');
     sound2 = loadSound('sound/marioplant.mp3');
     sound3 = loadSound('sound/fm.mp3');
@@ -44,6 +49,7 @@ function setup() {
     r = random(100, 255);
     g = random(100, 255);
     b = random(100, 255);
+    marker = new Marker(); 
     frameRate(60);
 }
 
@@ -68,7 +74,7 @@ function draw() {
                 particles.push(new Particle(player.x + player.size / 2, player.y + player.size));
             }
         }
-
+        marker.show(pos, speed);
         player.update();
         player.show();
 
@@ -117,6 +123,7 @@ function draw() {
         if (pos >= 2000) {
             levelComplete();
         }
+
 
         if (score >= finishLineX) {
             levelComplete();
@@ -327,7 +334,16 @@ function showLevelCompleteScreen() {
     fill(255);
     textSize(64);
     textAlign(CENTER);
-    if (score <= finishLineX/3)
+    if (score <= 0)
+        {
+            image(star2, width/2-180,height/2-200,100,100);
+            image(star2, width/2-60,height/2-250,150,150);
+            image(star2, width/2+110,height/2-200,100,100);
+            textSize(16);
+            text("HOW YOU GET NO SCORE???",width/2,40);
+            image(huh,10,10,200,300);
+        }
+    else if (score > 0 &&score <= finishLineX/3)
         {
             image(star1, width/2-180,height/2-200,100,100);
             image(star2, width/2-60,height/2-250,150,150);
@@ -345,8 +361,8 @@ function showLevelCompleteScreen() {
             image(star1, width/2-60,height/2-250,150,150);
             image(star1, width/2+110,height/2-200,100,100);
         }
-    text('Level Complete!', width / 2, height / 2);
     textSize(32);
+    text('Level Complete!', width / 2, height / 2);
     if (displayedScore < score) {
         displayedScore ++;
         if (displayedScore > score) {
@@ -416,6 +432,25 @@ function gameOver() {
     soundPlaying = false;
     gameState = 'gameOver';
 }
+
+class Marker {
+    constructor() {
+        this.width = 300;
+        this.height = 800;
+        this.color = 0; // Black color
+        this.offsetY = -150;
+    }
+
+    show(pos, speed) {
+        if (pos >= 1200) {
+            fill(this.color);
+            let markerX = 3000-pos + width / 2;
+            markerX -= speed;
+            image(fl,markerX, this.offsetY, this.width, this.height);
+        }
+    }
+}
+
 
 class Player {
     constructor() {
