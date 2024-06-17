@@ -301,13 +301,11 @@ function showGameOverScreen() {
     image(grave, width/2-150, height/2, 300, 300);
     textSize(32);
 
-    // Gradually increase the displayed score
     if (displayedScore < score) {
         displayedScore ++;
         if (displayedScore > score) {
             displayedScore = score;
         }
-        // Schedule the next update
         requestAnimationFrame(showGameOverScreen);
     }
 
@@ -437,13 +435,12 @@ class Marker {
     constructor() {
         this.width = 300;
         this.height = 800;
-        this.color = 0; // Black color
         this.offsetY = -150;
     }
 
     show(pos, speed) {
         if (pos >= 1200) {
-            fill(this.color);
+            fill(0);
             let markerX = 3000-pos + width / 2;
             markerX -= speed;
             image(fl,markerX, this.offsetY, this.width, this.height);
@@ -650,7 +647,7 @@ class Collectible {
         this.y = random(height - 50);
         this.size = 20;
         this.speed = 6;
-        this.ran = random(1) < 0.5 ? 'ellipse' : 'rect'; // random make circle / rect
+        this.ran = random(1) < 0.5 ? 'coinp' : 'rect';
     }
     update() {
         this.x -= this.speed;
@@ -659,7 +656,7 @@ class Collectible {
         fill(0, 255, 0);
         stroke(0);
         strokeWeight(5);
-        if (this.ran === 'ellipse') {
+        if (this.ran === 'coinp') {
             image(coin, this.x, this.y, this.size + 100, this.size + 50);
         } else {
             rect(this.x, this.y, this.size, this.size);
