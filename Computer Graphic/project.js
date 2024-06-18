@@ -206,7 +206,7 @@ function draw() {
         fill(255);
         stroke(0);
         strokeWeight(3);
-        text(`Attepmt: ${die}`, 250, 30);
+        text(`Attempt: ${die}`, 250, 30);
     }
      else if (gameState === 'gameOver') {
         showGameOverScreen();
