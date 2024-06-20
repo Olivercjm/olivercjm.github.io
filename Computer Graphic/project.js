@@ -230,6 +230,8 @@ function levelComplete() {
 }
 
 function showStartScreen() {
+    sound.stop();
+    sound2.stop();
     sound3.stop();
     soundPlaying = false;
     bg.update();
@@ -273,6 +275,10 @@ function showStartScreen() {
 }
 
 function showLevelSelectScreen() {
+    soundPlaying = false;
+    sound.stop();
+    sound2.stop();
+    sound3.stop();
     fill(0);
     r = random(100, 255);
     g = random(100, 255);
