@@ -16,10 +16,10 @@ function setup() {
     frameRate(25);
     kuruclass = new Kururin();
     angleMode(DEGREES);
-    position = createVector(width / 2, height / 2);  // Initial position of the ellipse
-    velo = createVector(0, 0.5);  // Initial spin speed (velocity)
-    acc = createVector(0, 0.01);  // Acceleration
-    maxv = 2;  // Maximum spin speed
+    position = createVector(width / 2, height / 2);
+    velo = createVector(0, 0.5);
+    acc = createVector(0, 0.01);
+    maxv = 2;
     kuruclass.kurusetup();
 }
 
@@ -36,7 +36,7 @@ function draw() {
 
 class Kururin {
     constructor() {
-        this.angle = 0;
+        this.angle = 75;
         this.kuru1 = 30;
         this.kuru2 = 20;
         this.kuru3 = 40;
