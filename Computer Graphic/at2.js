@@ -208,6 +208,6 @@ class Kururin {
         if (this.angle >= 360 || this.angle <= -360) {
             this.angle *= -1;
         }
-        image(cic,window.innerWidth / 2-200, window.innerHeight / 2 -300, 60, 60);
+        image(cic,500, 0, 60, 60);
     }
 }
