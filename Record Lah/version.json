@@ -1,1 +1,7 @@
-
+{
+  "versionCode": 2,
+  "versionName": "1.0.1",
+  "forceUpdate": true,
+  "apkUrl": "https://github.com/Olivercjm/olivercjm.github.io/releases/download/v1.0.1/record-lah.apk",
+  "notes": "Improved TNG payment detection and setup."
+}
